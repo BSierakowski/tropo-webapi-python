@@ -20,7 +20,7 @@ def index(request):
 
 	t = Tropo()
 
-        choices = Choices("[4-5 DIGITS]", mode="dtmf", terminator = "#")
+        choices = Choices("[4-5 DIGITS]", mode="dtmf", terminator = "#").obj
 	t.ask(choices, timeout=15, name="digit", say = "What's your four or five digit pin? Press pound when finished.")
 
 	t.on(event = "continue", next ="/continue")
